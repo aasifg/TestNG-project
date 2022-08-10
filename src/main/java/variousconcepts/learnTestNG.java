@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -39,8 +40,8 @@ public class learnTestNG {
 	String dashboardHeader="dashboard";
 	
 	@BeforeClass
-	public void readConfig() {
-		
+	public void readConfig(WebDriverWait wdFactory) {
+		wdFactory = new WebDriverWait(driver, null, null, 0, 0);
 		//InputStream //BufferedReader //Scanner //FileReader
 		
 		try {
@@ -123,10 +124,12 @@ public class learnTestNG {
 	
 //	@AfterMethod
 //	public void tearDown() {
+		
+	}
 		//driver.close();
 		//driver.quit();
 		
 		
-	}
+//	}
 
 //}
